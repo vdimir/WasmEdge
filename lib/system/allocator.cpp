@@ -138,7 +138,7 @@ uint8_t *Allocator::allocate_chunk(uint64_t Size) noexcept {
     return reinterpret_cast<uint8_t *>(Pointer);
   }
 #else
-  return std::malloc(Size);
+  return reinterpret_cast<uint8_t *>(std::malloc(Size));
 #endif
 }
 

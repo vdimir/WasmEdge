@@ -143,8 +143,9 @@ Executor::enterFunction(Runtime::StackManager &StackMgr,
     ErrCode Err;
     try {
       // Get symbol and execute the function.
-      Fault FaultHandler;
-      uint32_t Code = PREPARE_FAULT(FaultHandler);
+    //   Fault FaultHandler;
+    //   uint32_t Code = PREPARE_FAULT(FaultHandler);
+      uint32_t Code = 0;
       if (Code != 0) {
         Err = ErrCode(static_cast<ErrCategory>(Code >> 24), Code);
       } else {
